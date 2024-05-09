@@ -1,0 +1,78 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard</title>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" integrity="sha512-+4zCK9k+qNFUR5X+cKL9EIR+ZOhtIloNl9GIKS57V1MyNsYpYcUrUeQc9vNfzsWfV28IaLL3i96P9sdNyeRssA==" crossorigin="anonymous" />
+    <link rel="stylesheet" href="stylesheets/adminstyle.css">
+</head>
+<body>
+    
+    <!-- Header -->
+        <header id="header">
+            <nav>
+                <div class="container" style="display: flex; justify-content: space-between;">
+
+                    <div class="text-center">
+                        <a href="" class="nav-brand text-dark">Admin Panel</a>
+                    </div>
+                    <div class="=loggbtn" >
+                        <form  action="/logoutadmin?_method=DELETE" method="post">
+                            <button class="logout-btn" type="submit"><p class="text-lgt">Log Out</p></button>
+                        </form>
+                    </div>
+              
+        
+                </div>
+            </nav>
+        </header>
+
+    <!-- Main Site -->
+    <main id="site-main">
+        <div class="container">
+            <!-- Search -->
+            <div id="search-baron"> 
+              
+            </div>
+            <div class="box-nav d-flex justify-between">
+                <a href="/adduser" class="border-shadow">
+                    <span class="text-gradient">New User <i class="fas fa-user"></i></span>
+                </a>
+                <div id="search-bar">
+                    <input class="search-inp" type="text" id="name-search" placeholder="Search by Name">
+                    <i class="fa fa-search" aria-hidden="true"></i>
+                </div>
+            </div>
+           
+
+            <!-- form handling -->
+            <form action="/" method="POST">
+                <table class="table">
+                    <thead class="thead-dark">
+                        <tr>
+                            <th>ID</th>
+                            <th>Name</th>
+                            <th>@Email</th>
+                            <!-- <th>Status</th> -->
+                            <th>Action</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                      <%- include('include/_show')%>
+                    </tbody>
+                </table>
+            </form>
+            
+        </div>
+    </main>
+<!-- /Main Site -->
+
+
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg==" crossorigin="anonymous"></script>
+<script src="/js/index.js"></script>
+</body>
+</html>
